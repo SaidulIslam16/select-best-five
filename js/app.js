@@ -19,6 +19,8 @@ function selectPlayer(playerId) {
 
 }
 
+const selectedPlayersList = document.querySelectorAll('li')
+
 
 // Messi
 document.getElementById('btn-messi').addEventListener('click', function (x) {
@@ -52,6 +54,29 @@ document.getElementById('btn-renato').addEventListener('click', function (x) {
     x.target.disabled = true;
 })
 
-const playersSelected = document.getElementById('selected-players');
+// function for getting value from input field
 
-console.log(playersSelected);
+function getInputValueByID (inputId){
+    const inputfield = document.getElementById(inputId);
+    const inputfieldStr = inputfield.value;
+    const inpuNumber = parseFloat(inputfieldStr);
+    return inpuNumber;
+}
+
+
+// funcion for getting value from element
+
+function getElementValueByID (elementID){
+    const element = document.getElementById(elementID);
+    const elementStr = element.innerText;
+    const elementNumber = parseFloat(elementStr);
+    return elementNumber;
+}
+
+// function for seting things
+
+function setElementbyID (elementID, variable){
+    const elementToSet = document.getElementById(elementID);
+    elementToSet.innerText = variable;
+}
+
