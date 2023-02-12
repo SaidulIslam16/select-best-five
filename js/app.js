@@ -83,12 +83,45 @@ function setElementbyID (elementID, variable){
 // Player cost calculator
 
 document.getElementById('btn-calculate').addEventListener('click', function(){
-    const perPlayerCost = getInputValueByID('perplayer-cost');
     const selectedPlayersList = document.querySelectorAll('li');
+    if(selectedPlayersList.length===0){
+        alert('Select Player First');
+        return
+    }
+    
+    const perPlayerCost = getInputValueByID('perplayer-cost');
+
+    if(isNaN(perPlayerCost)){
+        alert('Enter Per Player Cost Amount');
+        return
+    }
+
     const playerExpense = (selectedPlayersList.length)*perPlayerCost;
     
     
     // setting element
 
     setElementbyID('player-expenses', playerExpense);
+})
+
+// total calculation
+
+document.getElementById('btn-calculateTotal').addEventListener('click', function(){
+     
+    const playerExpense = getElementValueByID('player-expenses');
+    const managerCost = getInputValueByID('manager-cost');
+    if(isNaN(managerCost)){
+        alert('Enter Amount in Every Field');
+        return
+    }
+    const coachCost = getInputValueByID('coach-cost');
+
+    if(isNaN(coachCost)){
+        alert('Enter Amount in Every Field');
+        return
+    }
+
+    const totalExpnses = playerExpense+managerCost+coachCost;
+
+    setElementbyID('total-expenses', totalExpnses);
 })
