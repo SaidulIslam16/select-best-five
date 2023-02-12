@@ -10,8 +10,8 @@ function selectPlayer(playerId) {
 
     const selectedPlayersList = document.querySelectorAll('li')
     if(selectedPlayersList.length>4){
-        alert('5 Player already selected');
-        return
+        return alert('5 Player already selected');
+        
     }
     else{
         selectedPlayers.appendChild(li);
@@ -85,15 +85,15 @@ function setElementbyID (elementID, variable){
 document.getElementById('btn-calculate').addEventListener('click', function(){
     const selectedPlayersList = document.querySelectorAll('li');
     if(selectedPlayersList.length===0){
-        alert('Select Player First');
-        return
+        return alert('Select Player First');
+        
     }
     
     const perPlayerCost = getInputValueByID('perplayer-cost');
 
     if(isNaN(perPlayerCost)){
-        alert('Enter Per Player Cost Amount');
-        return
+        return alert('Enter Per Player Cost Amount');
+        
     }
 
     const playerExpense = (selectedPlayersList.length)*perPlayerCost;
@@ -111,14 +111,14 @@ document.getElementById('btn-calculateTotal').addEventListener('click', function
     const playerExpense = getElementValueByID('player-expenses');
     const managerCost = getInputValueByID('manager-cost');
     if(isNaN(managerCost)){
-        alert('Enter Amount in Every Field');
-        return
+        return alert('Enter Amount in Every Field');
+        
     }
     const coachCost = getInputValueByID('coach-cost');
 
     if(isNaN(coachCost)){
-        alert('Enter Amount in Every Field');
-        return
+        return alert('Enter Amount in Every Field');
+        
     }
 
     const totalExpnses = playerExpense+managerCost+coachCost;
