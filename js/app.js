@@ -19,7 +19,7 @@ function selectPlayer(playerId) {
 
 }
 
-const selectedPlayersList = document.querySelectorAll('li')
+
 
 
 // Messi
@@ -80,3 +80,15 @@ function setElementbyID (elementID, variable){
     elementToSet.innerText = variable;
 }
 
+// Player cost calculator
+
+document.getElementById('btn-calculate').addEventListener('click', function(){
+    const perPlayerCost = getInputValueByID('perplayer-cost');
+    const selectedPlayersList = document.querySelectorAll('li');
+    const playerExpense = (selectedPlayersList.length)*perPlayerCost;
+    
+    
+    // setting element
+
+    setElementbyID('player-expenses', playerExpense);
+})
